@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load icon font -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- load MUI -->
+    <link href="//cdn.muicss.com/mui-0.9.12/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="//cdn.muicss.com/mui-0.9.12/js/mui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.voximplant.com/edge/voximplant.min.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />  
+  </head>
+  <body>
+    <div id="sidedrawer" class="mui--no-user-select">
+        <div id="sidedrawer-brand" class="mui--appbar-line-height">
+            <span class="mui--text-title">Voximplant</span>
+        </div>
+        <div class="mui-divider"></div>
+        <div class="controls">
+            <h3>Translation</h3>
+            <div class="mui-dropdown">
+                <button class="mui-btn mui-btn--primary" data-mui-toggle="dropdown">
+                    <span id="from-lang">From Language</span>
+                    <span class="mui-caret"></span>
+                </button>
+                <ul class="mui-dropdown__menu">
+                    <li><a href="javascript:chooseLang('from','en')">English</a></li>
+                    <li><a href="javascript:chooseLang('from','ru')">Русский</a></li>
+                    <li><a href="javascript:chooseLang('from','es')">Español</a></li>
+                    <li><a href="javascript:chooseLang('from','fr')">Français</a></li>
+                    <li><a href="javascript:chooseLang('from','de')">Deutsch</a></li>
+                </ul>
+            </div>
+            <div class="mui-dropdown">
+                <button class="mui-btn mui-btn--primary" data-mui-toggle="dropdown">
+                    <span id="to-lang">To Language</span>
+                    <span class="mui-caret"></span>
+                </button>
+                <ul class="mui-dropdown__menu">
+                    <li><a href="javascript:chooseLang('to','en')">English</a></li>
+                    <li><a href="javascript:chooseLang('to','ru')">Русский</a></li>
+                    <li><a href="javascript:chooseLang('to','es')">Español</a></li>
+                    <li><a href="javascript:chooseLang('to','fr')">Français</a></li>
+                    <li><a href="javascript:chooseLang('to','de')">Deutsch</a></li>
+                </ul>
+            </div>
+            <div class="mui-checkbox">
+                <label>
+                <input id="translation" type="checkbox" value="" disabled>
+                ENABLED
+                </label>
+            </div>
+            <h3>Text-to-Speech</h3>
+            <div class="mui-dropdown">
+                <button class="mui-btn mui-btn--primary" data-mui-toggle="dropdown">
+                    <span id="voice">Voice</span>
+                    <span class="mui-caret"></span>
+                </button>
+                <ul class="mui-dropdown__menu">
+                    <li><a href="javascript:chooseVoice('male')">Male</a></li>
+                    <li><a href="javascript:chooseVoice('female')">Female</a></li>
+                </ul>
+            </div>
+            <div class="mui-checkbox">
+                <label>
+                <input id="tts" type="checkbox" value="" disabled>
+                ENABLED
+                </label>
+            </div>
+        </div>
+    </div>
+    <header id="header" class="mui-appbar mui--z1">
+            <div class="mui-appbar mui--appbar-line-height">
+            <div class="mui-container-fluid">
+                <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+                <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+                <span class="mui--text-title mui--visible-xs-inline-block">Voximplant</span>
+            </div>
+  </div>
+    </header>
+    <!-- content -->
+    <div class="mui-container" id="stage">
+
+        <!-- login-form -->
+        <div class="mui-panel login-panel">        
+        <form class="mui-form">       
+            <legend>Voximplant Babelfish App</legend> 
+            <div class="mui-textfield">
+                <input name="username" type="text" placeholder="Username" value="test10" >
+            </div>
+            <div class="mui-textfield">
+                <input name="password" type="password" placeholder="Password" value="testpass" >
+            </div>
+            <button type="submit" class="mui-btn mui-btn--primary mui-btn--raised"><i class="fa fa-unlock-alt"></i> Log in</button>
+        </form>
+        </div>
+
+        <div class="status"><h3>Initialization...</h3></div>
+
+        <div id="recognition"></div>
+    </div>    
+    <footer id="footer">
+        <div class="mui-container-fluid">
+            <br>
+            Made with ♥ by <a href="https://voximplant.com">Voximplant</a>
+        </div>
+    </footer>
+  </body>
+<script type="text/javascript" src="app.js"></script>
+</html>
